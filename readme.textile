@@ -8,8 +8,7 @@ These allow for basic flow control (conditionals & function calls) and console i
 
 Here is a basic example of looping from 1 to 10 and printing out the current number:
 
-pre..
-;
+pre.. ;
 ; for(int i = 0; i < 10; i++)
 ; {
 ;     print(i)
@@ -35,9 +34,7 @@ println
 
 p. And here's one that prompts the user, reads an integer from the console and determines if the value is prime or not.
 
-pre..
-
-; prime.hvm
+pre.. ; prime.hvm
 ;
 ; prompts the user for a number and prints out whether or not it is prime.
 
