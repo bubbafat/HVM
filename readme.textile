@@ -115,7 +115,4 @@ print
 println
 exit
 
-
-p. Pretty straight forward.
-
-Not a great example of a parser, opcode design or execution runtime.  But it's a very simple introduction to the three.
+p. Pretty straight forward.  Not a great example of a parser, opcode design or execution runtime.  But it's a very simple introduction to the three.
