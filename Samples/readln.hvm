@@ -1,0 +1,16 @@
+decstr @var ""
+readln
+pop @var
+push @var
+println
+
+
+decint @i 0
+readln
+dup
+inc
+popn 1
+dup
+pop @i
+println
+

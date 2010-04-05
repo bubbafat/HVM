@@ -1,0 +1,14 @@
+push 10
+push 20
+add
+println		; 30
+
+push 1000h
+push 1010h
+and
+println		; 4096
+
+push AAAAh
+push 1234h
+and
+println		; 544

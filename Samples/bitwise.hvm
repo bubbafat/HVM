@@ -1,0 +1,43 @@
+push 10
+push 20
+xor
+push 30
+ceq
+brfalse failed
+call worked 0
+
+push 50
+not
+push -51
+ceq
+brfalse failed
+call worked 0
+
+push 30
+push 50
+or
+push 62
+ceq
+brfalse failed
+call worked 0
+
+push 60
+push 24
+xor
+push 36
+ceq
+brfalse failed
+call worked 0
+
+exit
+
+.func worked
+ldstr "success"
+println
+ret 0
+
+
+.lbl failed
+ldstr "failed"
+println
+exit

@@ -1,0 +1,25 @@
+decint @int10 10
+decint @int11 11
+decstr @strlt "this is the string"
+decstr @strgt "zzthis is the string"
+
+push @int10
+push @int11
+cgt
+println		; false
+
+push @int11
+push @int10
+cgt
+println		; true
+
+push @strlt
+push @strgt
+cgt
+println		; false
+
+push @strgt
+push @strlt
+cgt
+println		; true
+

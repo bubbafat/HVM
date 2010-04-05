@@ -1,0 +1,31 @@
+;output:
+;
+;this is a main string
+;this is a local naming conflict string
+;this is a main2 string
+;this is the global string 1
+;
+
+decstr @g_String1 "this is the global string 1"
+
+call main 0
+exit
+
+.func main
+decstr @local "this is a main string"
+decstr @g_String1 "this is a local naming conflict string"
+push @local
+println
+push @g_String1
+println
+call main2 0
+ret 0
+
+.func main2
+decstr @local "this is a main2 string"
+push @local
+println
+push @g_String1
+println
+ret 0
+

@@ -1,0 +1,33 @@
+decint @int20 20
+decblk @name @int20
+
+decint @i 0
+.lbl for_start
+push @i
+blklen @name
+clt
+brfalse for_done
+push @i
+stidx @name @i
+push @i
+inc
+br for_start
+.lbl for_done
+
+push 0
+pop @i
+
+.lbl print_for_start
+push @i
+blklen @name
+clt
+brfalse print_for_done
+ldidx @name @i
+println
+push @i
+inc
+br print_for_start
+
+.lbl print_for_done
+exit
+

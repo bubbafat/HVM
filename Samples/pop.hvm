@@ -1,0 +1,11 @@
+decint @int10 10
+
+push 1
+println
+push 10
+pop @int10
+push 2
+println
+
+push @int10
+println

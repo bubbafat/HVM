@@ -1,0 +1,7 @@
+decstr @str1 "this is string 1"
+decint @int1 42
+
+push @str1
+push @int1
+println
+println

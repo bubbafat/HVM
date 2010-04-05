@@ -1,0 +1,15 @@
+push 10
+dup
+ceq
+brtrue worked
+decstr @w "failed"
+push @w
+println
+exit
+
+
+.lbl worked
+decstr @w "worked"
+push @w
+println
+exit

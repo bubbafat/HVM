@@ -1,0 +1,30 @@
+;output:
+;
+;30
+;20
+;700
+;this is the global string 1
+;10
+
+decstr @g_String1 "this is the global string 1"
+
+push 10
+push 20
+push 30
+call main 3
+exit
+
+.func main
+println			;30
+println			;20
+push 700
+call main2 1
+println			;g_String1 value
+println			;10
+ret 0
+
+.func main2
+println			;700
+push @g_String1
+ret 1
+

@@ -1,0 +1,46 @@
+push 10
+push 20
+add        ; 30
+dup
+println
+push 10
+sub        ; 20
+dup
+println
+push 5
+div        ; 4
+dup
+println
+push 10
+mul        ; 40
+println
+
+push 50
+call isEven 1
+brfalse failed
+call worked 0
+
+push 10
+neg
+push -10
+ceq
+brfalse failed
+call worked 0
+exit
+
+.lbl failed
+ldstr "failed"
+println
+exit
+
+.func worked
+ldstr "worked"
+println
+ret 0
+
+.func isEven
+push 2
+mod
+push 0
+ceq
+ret 1

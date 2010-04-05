@@ -1,0 +1,124 @@
+HVM is a simple stack based opcode interpreter.  I wrote this in early 2003 over a weekend when I'm sure I should have been doing something else.  Perhaps someone will find it useful for something.
+
+It provides the following opcodes
+
+Add And BlkLen Br Brfalse Brtrue Call Ceq Cgt Clt Dbg DecBlk DecInt DecStr Div Dup Exit Func Inc Lbl LdIdx Ldstr Maxstack Mod Mul Neg Not Or Pop PopN Print PrintLn Push Read ReadLn Ret StIdx Sub Xor
+
+These allow for basic flow control (conditionals & function calls) and console i/o.
+
+Here is a basic example of looping from 1 to 10 and printing out the current number:
+
+pre..
+;
+; for(int i = 0; i < 10; i++)
+; {
+;     print(i)
+; }
+; print("done")
+;
+
+decint @i 0
+
+.lbl for_start
+push @i
+push 10
+clt
+brfalse for_done
+push @i
+inc
+println
+br for_start
+
+.lbl for_done
+ldstr "done"
+println
+
+p. And here's one that prompts the user, reads an integer from the console and determines if the value is prime or not.
+
+pre..
+
+; prime.hvm
+;
+; prompts the user for a number and prints out whether or not it is prime.
+
+decstr @is " is prime"
+decstr @isnot " is not prime"
+decint @val 0
+
+ldstr "please enter a number: "
+print
+readln
+
+; trick to verify the input was an int - or convertable to one
+dup
+inc
+popn 1
+
+; store a copy as our orig value
+dup
+pop @val
+
+; test if value is one or less
+push @val
+push 2
+clt
+brtrue isNotPrime
+
+; test is value is 2 or 3
+push @val
+push 4
+clt brtrue isPrime
+
+; test if even
+push @val
+push 2
+mod
+push 0
+ceq
+brtrue isNotPrime
+
+; for(int i = 0; i < val/2+1; i++) 
+;     if val % i == 0 goto isNotPrime
+; goto isPrime
+
+decint @i 3
+decint @valHalf 0
+push @val
+push 2
+div
+inc
+pop @valHalf
+push @i
+
+.lbl for_block_start
+push @valHalf
+clt
+brfalse isPrime
+push @val
+push @i
+mod
+push 0
+ceq
+brtrue isNotPrime
+push @i
+inc
+br for_block_start
+
+.lbl isPrime
+push @is
+push @val
+print
+println
+exit
+
+.lbl isNotPrime
+push @isnot
+push @val
+print
+println
+exit
+
+
+p. Pretty straight forward.
+
+Not a great example of a parser, opcode design or execution runtime.  But it's a very simple introduction to the three.

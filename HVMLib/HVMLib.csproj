@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30128</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A02E6A9-AE89-4558-8857-A054080E49CF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>HVM</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HVM</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Add.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\And.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\BlkLen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Br.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Brfalse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Brtrue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Call.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Ceq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Cgt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Clt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Dbg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\DecBlk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\DecInt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\DeclaratorOpCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\DecStr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Div.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Dup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Exception.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Exit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Func.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Inc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\LabelOpCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Lbl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\LdIdx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Ldstr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Maxstack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Mod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Mul.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Neg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Not.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\OpCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Or.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Pop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\PopN.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Print.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\PrintLn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Push.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Read.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\ReadLn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Ret.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\StIdx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Sub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpCodes\Xor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parser\Exception.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parser\ParseStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Arguement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Exception.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\ExecutionEnvironment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\ExecutionStack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\ExecutionStackItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\JumpTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\LexicalScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\OpcodeStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

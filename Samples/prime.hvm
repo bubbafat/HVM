@@ -1,0 +1,82 @@
+; prime.hvm
+;
+; prompts the user for a number and prints out whether or not it is prime.
+
+decstr @is " is prime"
+decstr @isnot " is not prime"
+decint @val 0
+
+ldstr "please enter a number: "
+print
+readln
+
+; trick to verify the input was an int - or convertable to one
+dup
+inc
+popn 1
+
+; store a copy as our orig value
+dup
+pop @val
+
+; test if value is one or less
+push @val
+push 2
+clt
+brtrue isNotPrime
+
+; test is value is 2 or 3
+push @val
+push 4
+clt brtrue isPrime
+
+; test if even
+push @val
+push 2
+mod
+push 0
+ceq
+brtrue isNotPrime
+
+; for(int i = 0; i < val/2+1; i++) 
+;     if val % i == 0 goto isNotPrime
+; goto isPrime
+
+decint @i 3
+decint @valHalf 0
+push @val
+push 2
+div
+inc
+pop @valHalf
+push @i
+
+.lbl for_block_start
+push @valHalf
+clt
+brfalse isPrime
+push @val
+push @i
+mod
+push 0
+ceq
+brtrue isNotPrime
+push @i
+inc
+br for_block_start
+
+.lbl isPrime
+push @is
+push @val
+print
+println
+exit
+
+.lbl isNotPrime
+push @isnot
+push @val
+print
+println
+exit
+
+

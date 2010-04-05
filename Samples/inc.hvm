@@ -1,0 +1,13 @@
+push 10
+inc
+push 11
+ceq
+println
+
+
+decint @int10 10
+push @int10
+inc
+push 11
+ceq
+println

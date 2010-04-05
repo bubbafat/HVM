@@ -1,0 +1,40 @@
+decint @int10 10
+decint @int11 11
+decstr @strlt "this is the string"
+decstr @strgt "zzthis is the string"
+
+push @int10
+push @int11
+clt
+brfalse failed
+call success  0
+
+push @int11
+push @int10
+clt
+brtrue failed
+call success  0
+
+push @strlt
+push @strgt
+clt
+brfalse failed
+call success  0
+
+push @strgt
+push @strlt
+clt
+brtrue failed
+call success 0
+
+exit
+
+.func success
+ldstr "success"
+println
+ret 0
+
+.lbl failed
+ldstr "failed"
+println
+exit

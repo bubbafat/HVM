@@ -1,0 +1,17 @@
+; result should be 20
+
+push 30
+push 10
+sub ; should push 20 onto the stack
+
+; comment
+    ; comment
+       ;;;;cinnebt
+;
+
+push 10
+sub ; should push 10 onto the stack
+println
+
+
+

@@ -1,0 +1,22 @@
+push 10
+dup
+ceq
+brfalse failed
+
+decint @int10 10
+push @int10
+dup
+ceq
+brfalse failed
+br worked
+
+
+.lbl failed
+push @false
+println
+exit
+
+.lbl worked
+push @true
+println
+exit

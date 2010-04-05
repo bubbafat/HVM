@@ -1,0 +1,22 @@
+decint @int10 10
+decstr @str "this is the string"
+
+push @int10
+dup
+ceq
+println
+
+push @str
+dup
+ceq
+println
+
+push 10
+push 10
+ceq
+println
+
+push 20
+push 10
+ceq
+println

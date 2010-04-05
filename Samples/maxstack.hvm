@@ -1,0 +1,28 @@
+maxstack 10
+
+push 1
+push 2
+push 3
+push 4
+push 5
+call newStack 0
+println
+println
+println
+println
+println
+println
+println
+println
+println
+println
+exit
+
+.func newStack
+maxstack 5
+push 1
+push 2
+push 3
+push 4
+push 5
+ret 5
